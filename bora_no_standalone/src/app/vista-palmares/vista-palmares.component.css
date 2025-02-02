@@ -1,0 +1,132 @@
+  .thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .season-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 210px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  .thumbnail:hover,
+  .thumbnail:focus,
+  .thumbnail.disabled,
+  .thumbnail[disabled] {
+    color: black;
+    background-color: goldenrod;
+  }
+
+  .thumbnail:focus {
+    color: white;
+    background-color: #363636;
+    text-decoration: none;
+  }
+
+  .thumbnail-img {
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    height: 150px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor */
+    border-radius: 50%; /* Esto hará que las imágenes sean circulares, puedes eliminarlo si no lo deseas */
+  }
+
+  .thumbnail-caption {
+    margin-top: 10px;
+  }
+
+  .thumbnail-caption h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .thumbnail-caption h4 {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .thumbnail-caption ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .thumbnail-caption ul li {
+    color: #295a56;
+    text-align: right;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-right: 20px;
+    font-weight: bold;
+  }
+
+  .thumbnail-caption label {
+    color: #295a56;
+    text-align: right;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-right: 20px;
+    font-weight: bold;
+  }
+
+  .season-label {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: goldenrod;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #363636;
+    background-repeat: repeat-x;
+    font-weight: bold;
+  }
+
+  .season-label:hover,
+  .season-label:focus,
+  .season-label.disabled,
+  .season-label[disabled] {
+    color: #333333;
+    background-color: goldenrod;
+  }
+
+  .season-label:focus {
+    color: white;
+    background-color: #363636;
+    text-decoration: none;
+  }
+
+  .select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+  }
+
+  select {
+    background-color: #295a56;
+    color: white;
+    width: 75px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+
+  .label {
+    color: #295a56;
+    text-align: left;
+    font: 12px arial;
+    padding-right: 20px;
+  }

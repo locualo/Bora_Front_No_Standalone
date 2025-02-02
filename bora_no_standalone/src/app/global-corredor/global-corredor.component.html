@@ -1,0 +1,44 @@
+<main>
+    <table>
+      <tbody>
+        <tr>
+          <td class="label">Selección de corredor:</td>
+          <td class="label">
+            <select name="corredorselect" [(ngModel)]="corredorelegido" (change)="cargarPerfil(corredorelegido.id)">
+              <option selected="selected" disabled>Elige Corredor...</option>
+              <option *ngFor="let corr of corredores" [ngValue]="corr">{{corr.nombre}}</option>
+            </select>
+          </td>
+          <td class="label">Show carreras: <input type="checkbox" (click)="clicar()"></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Carrera selection dropdown, hidden based on hiddenCarrera property 
+    <td [hidden]="hiddenCarrera">
+      <select name="carreraselect">
+        <option value="" *ngFor="let car of carreras">{{car.nombre}}</option>
+      </select>
+    </td>-->
+    <table class="table">
+      <tbody>
+        <tr class="tr">
+          <td>Carrera </td>
+          <td>Categoría </td>
+          <td>Temporada </td>
+          <td>Etapas </td>
+          <td>ITT </td>
+        </tr>
+        <tr *ngFor="let vir of victoriascorredor">
+          <td>
+            <div><img class="td_img" src={{vir.bandera}} /> {{vir.carreranombre}}</div>
+          </td>
+          <td>
+            <div>{{vir.carreracat}}</div>
+          </td>
+          <td>{{vir.temporada}}</td>
+          <td><label [hidden]="vir.etapa">x</label>{{vir.etapas}}</td>
+          <td><label [hidden]="vir.itt">X</label></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>

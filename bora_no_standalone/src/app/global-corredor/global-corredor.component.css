@@ -1,0 +1,54 @@
+.header_background {
+    background-color: #295a56;
+    height: 65px;
+  }
+  
+  .img_jersey {
+    width: 256px;
+    height: 256px;
+    border: 0;
+  }
+  
+  .label {
+    color: #295a56;
+    text-align: left;
+    font: 12px arial;
+    padding-right: 20px;
+  }
+  
+  .table {
+    border: black solid;
+    border-color: grey;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    width: 600px;
+    font: 12px tahoma, verdana, arial;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .tr {
+    color: #295a56;
+    background: #dbe8ab;
+  }
+  
+  .td_img {
+    border: "0";
+    width: 15px;
+    height: 10px;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+  
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }

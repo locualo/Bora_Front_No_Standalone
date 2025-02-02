@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="vista-palmares.component.css">
+<main>
+    <div class="season-selector">
+        <label class="season-label" for="season">Temporada</label>
+        <select id="season" [(ngModel)]=selectedSeason (change)="obtenerPalmaresSelectoPorTemporada(selectedSeason)">
+            <option *ngFor="let year of seasons" [value]="year">{{year}}</option>
+        </select>
+    </div>
+    <div class="thumbnails">
+        <div class="thumbnail" *ngFor="let cyclist of palmares.corredores">
+            <img [src]="cyclist.foto" alt="{{cyclist.nombre}}" class="thumbnail-img">
+            <div class="thumbnail-caption">
+                <h3>{{cyclist.nombre}}</h3>
+                <h4>Total Points</h4> <label>{{cyclist.puntosTotales}}</label>
+                <h4>Top Results</h4>
+                <ul>
+                    <li *ngFor="let logro of getDisplayedLogros(cyclist)">
+                        <div *ngIf="logro.numero !== undefined">
+                            {{logro.numero}} etapa {{logro.carrera}}
+                        </div>
+                        <div *ngIf="logro.puesto !== undefined">
+                            {{logro.puesto}}º {{logro.carrera}}
+                        </div>
+                    </li>
+                </ul>
+                <button *ngIf="cyclist.logros.length > 3 && !cyclist.showAll" (click)="toggleShowAll(cyclist)">Ver
+                    más</button>
+                <button *ngIf="cyclist.showAll" (click)="toggleShowAll(cyclist)">Ver menos</button>
+            </div>
+        </div>
+    </div>
+</main>

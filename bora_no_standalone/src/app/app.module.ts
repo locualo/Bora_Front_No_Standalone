@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {provideHttpClient} from '@angular/common/http';
+import { VistaPalmaresComponent } from './vista-palmares/vista-palmares.component';
+import { GlobalCorredorComponent } from './global-corredor/global-corredor.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VistaPalmaresComponent,
+    GlobalCorredorComponent
   ],
   imports: [
     BrowserModule,
