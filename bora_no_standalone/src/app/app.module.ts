@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import {provideHttpClient} from '@angular/common/http';
 import { VistaPalmaresComponent } from './vista-palmares/vista-palmares.component';
 import { GlobalCorredorComponent } from './global-corredor/global-corredor.component';
+import { AnadirLogroComponent } from './anadir-logro/anadir-logro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VistaPalmaresComponent,
-    GlobalCorredorComponent
+    GlobalCorredorComponent,
+    AnadirLogroComponent
   ],
   imports: [
     BrowserModule,

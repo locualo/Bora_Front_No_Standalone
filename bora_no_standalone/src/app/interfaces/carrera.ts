@@ -1,3 +1,5 @@
+import { Pais } from "./pais";
+
 export interface Carrera {
     nombre: string;
     id: number;
@@ -5,6 +7,7 @@ export interface Carrera {
     worldtour: boolean;
     prioridad: number;
     bandera: string;
+    pais: Pais;
 }
 
 /*"nombre": "GP Denain - Porte du Hainaut",

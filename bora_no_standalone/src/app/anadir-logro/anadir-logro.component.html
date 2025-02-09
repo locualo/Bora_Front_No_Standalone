@@ -1,0 +1,37 @@
+<div class="season-selector">
+    <label class="season-label" for="carrera">Carrera</label>
+    <select (change)="pintarBanderaCarrera($event)">
+        <option *ngFor="let carrera of res.carreras" [value]="carrera.id">{{ carrera.nombre }}</option>
+    </select>
+    <img class="img_jersey" src={{banderaCarrera}} alt="carrera.pais.nombre" />
+</div>
+<div class="season-selector">
+    <label class="season-label" for="corredor">Corredor</label>
+    <select (change)="pintarBandera($event)">
+        <option *ngFor="let corredor of responseCorredores.corredores" [value]="corredor.id">{{ corredor.nombre }}</option>
+    </select>
+    <img class="img_jersey" src={{bandera}} alt="corredor.pais.nombre" />
+</div>
+<div class="season-selector">
+    <label class="season-label" for="logro">Logro</label>
+    <select [(ngModel)]="selectedLogro">
+        <option *ngFor="let log of logro" [value]="log">{{ log }}</option>
+    </select>
+</div>
+<div class="season-selector" *ngIf="selectedLogro === 'Puestometro'">
+    <label class="season-label" for="pos">Posicion</label>
+    <select [(ngModel)]="selectedPos">
+        <option *ngFor="let pos of posicion" [value]="pos">{{ pos }}</option>
+    </select>
+</div>
+<div class="season-selector" *ngIf="selectedLogro === 'Victoria'">
+    <label class="season-label" for="etapa">Etapa</label>
+    <input type="checkbox" id="etapa" [(ngModel)]="isEtapa">
+</div>
+<div class="season-selector" *ngIf="selectedLogro === 'Victoria'">
+    <label class="season-label" for="itt">ITT</label>
+    <input type="checkbox" id="itt" [(ngModel)]="isITT">
+</div>
+<div class="button-selector">
+    <button class="season-button" (click)="recuperarCarreras()">Guardar</button>
+</div>

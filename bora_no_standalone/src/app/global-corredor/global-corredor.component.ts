@@ -86,7 +86,7 @@ export class GlobalCorredorComponent {
     });
   }
 
-  obtenerCorredores() {
+ /* obtenerCorredores() {
     this.jsoncorredor.getCorredor().subscribe((corr) => {
       for (const corredor of corr) {
         this.corredores.push(corredor);
@@ -94,16 +94,16 @@ export class GlobalCorredorComponent {
       this.sortCorredoresBy();
       this.corredorelegido = this.corredores[0];
     });
-  }
+  }*/
 
-  obtenerCarreras() {
+  /*obtenerCarreras() {
     this.jsoncarrera.getCarreraconformada().subscribe((car) => {
       for (const carrera of car) {
         this.carreras.push(carrera);
       }
       this.sortCarrerasBy();
     });
-  }
+  }*/
 
   obtenerVictorias() {
     this.jsonvictoria.getVictoria().subscribe((vir) => {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsoncarreraconformadaService } from '../services/jsoncarreraconformada.service';
 import { Palmares } from '../interfaces/palmares/palmares';
-import { Logro } from '../interfaces/palmares/logro';
 import { Corredor } from '../interfaces/palmares/corredor';
 
 @Component({
