@@ -6,6 +6,10 @@ import { JsoncorredorService } from '../services/jsoncorredor.service';
 import { ResponseRecCorr } from '../interfaces/corredor/responseRecCorr';
 import { banderas } from '../interfaces/constants';
 import { Corredor } from '../interfaces/corredor';
+import { CreateVictoria } from '../interfaces/creates/createvictoria';
+import { CreatePuestometro } from '../interfaces/creates/createpuestometro';
+import { Posicion } from '../interfaces/creates/posicion';
+import { Carrera } from '../interfaces/carrera';
 
 @Component({
   selector: 'app-anadir-logro',
@@ -26,6 +30,14 @@ export class AnadirLogroComponent {
   banderaCarrera: string = '';
   corredorActivo: Corredor = {} as Corredor;
   asignada: boolean = false;
+  cp = {} as CreatePuestometro;
+  cv = {} as CreateVictoria;
+  pos = {} as Posicion;
+  corredor: number = 0;
+  carrera: number = 0;
+  temporada: number = 0;
+  seasons: number[] = [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027];
+  selectedSeason: number = 2020;
 
   ngOnInit(): void {
     this.recuperarCarreras();
@@ -42,6 +54,7 @@ export class AnadirLogroComponent {
     this.req.worldTour = false;
     this.jsoncarrera.getCarreraconformada(this.req).subscribe((data) => {
       this.res = data;
+      this.carrera = this.res.carreras[0].id;
       this.pintarBanderaCarrera(this.res.carreras[0]);
     });
   }
@@ -49,6 +62,7 @@ export class AnadirLogroComponent {
   recuperarCorredores(): void {
     this.jsoncorredor.getCorredor().subscribe((data) => {
       this.responseCorredores = data;
+      this.corredor = this.responseCorredores.corredores[0].id;
       this.pintarBandera(this.responseCorredores.corredores[0]);
     });
   }
@@ -87,5 +101,42 @@ export class AnadirLogroComponent {
     if(!this.asignada) {
       this.bandera = 'https://i.pinimg.com/originals/34/a2/18/34a21875aef565bdf426b8da2199c437.jpg';
     }
+  }
+
+  guardarVictoria(): void {
+    this.pos.etapa = this.isEtapa
+    this.pos.tt = this.isITT;
+    this.pos.corredorid = this.corredor;
+    this.pos.carreraid = this.carrera;
+    this.pos.temporada = this.selectedSeason;
+    this.cv.posiciones = [];
+    this.cv.posiciones.push(this.pos);
+    this.jsoncorredor.guardarVictoria(this.cv).subscribe({
+      next: (data) => {
+        alert('Operación exitosa: Victoria guardada');
+      },
+      error: (error) => {
+        alert('Error: No se pudo guardar la victoria. Por favor, inténtalo de nuevo.');
+        console.error('Error al guardar la victoria:', error);
+      }
+    });
+  }
+
+  guardarPuestometro(): void {
+    this.pos.puesto = this.selectedPos;
+    this.pos.corredorid = this.corredor;
+    this.pos.carreraid = this.carrera;
+    this.pos.temporada = this.selectedSeason;
+    this.cp.posiciones = [];
+    this.cp.posiciones.push(this.pos);
+    this.jsoncorredor.guardarPuestometro(this.cp).subscribe({
+      next: (data) => {
+        alert('Operación exitosa: Puestometro guardado');
+      },
+      error: (error) => {
+        alert('Error: No se pudo guardar el Puestometro. Por favor, inténtalo de nuevo.');
+        console.error('Error al guardar el Puestometro:', error);
+      }
+    });
   }
 }

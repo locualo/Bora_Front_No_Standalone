@@ -10,7 +10,7 @@ import { Corredor } from '../interfaces/palmares/corredor';
 })
 export class VistaPalmaresComponent implements OnInit {
   seasons: number[] = [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027];
-  selectedSeason: number = 2020;
+  selectedSeason: number = 2027;
   palmares = {} as Palmares;
 
   constructor(
