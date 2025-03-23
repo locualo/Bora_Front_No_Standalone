@@ -9,7 +9,6 @@ import { Corredor } from '../interfaces/corredor';
 import { CreateVictoria } from '../interfaces/creates/createvictoria';
 import { CreatePuestometro } from '../interfaces/creates/createpuestometro';
 import { Posicion } from '../interfaces/creates/posicion';
-import { Carrera } from '../interfaces/carrera';
 
 @Component({
   selector: 'app-anadir-logro',

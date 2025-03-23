@@ -135,3 +135,41 @@ export const banderas = [
     codigo: 8
   }
 ];
+
+export const temporadas = [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027];
+
+export const categoria_tour = 1;
+export const categoria_gv = 2;
+export const categoria_monumento = 3;
+export const categoria_major = 5;
+export const clasic1 = 6;
+export const categoria_minor = 7;
+export const clasic2 = 8;
+export const nc = 14;
+
+export const logos_carrera = [
+  {
+    carrera: "Tour de Francia",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Le_Tour_de_France_logo.svg/1200px-Le_Tour_de_France_logo.svg.png"
+  },
+  {
+    carrera: "Giro de Italia",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Giro_d%27Italia_logo.svg/1200px-Giro_d%27Italia_logo.svg.png"
+  },
+  {
+    carrera: "Vuelta a España",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Vuelta_a_Espa%C3%B1a_logo.svg/1200px-Vuelta_a_Espa%C3%B1a_logo.svg.png"
+  },
+  {
+    carrera: "Mundial de Ruta",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/UCI_Road_World_Championships.svg/1200px-UCI_Road_World_Championships.svg.png"
+  },
+  {
+    carrera: "Ronde van Vlaanderen - Tour des Flandres",
+    logo: "https://www.procyclingstats.com/images/logo/ax//ronde-van-vlaanderen-9799.png"
+  },
+  {
+    carrera: "Paris - Roubaix",
+    logo: "https://www.procyclingstats.com/images/logo/bn/ct/paris-roubaix-2017.jpg"
+  }
+]

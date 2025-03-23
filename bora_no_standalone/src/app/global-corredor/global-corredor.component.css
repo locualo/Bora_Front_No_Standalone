@@ -1,54 +1,258 @@
 .header_background {
-    background-color: #295a56;
-    height: 65px;
+  background-color: #295a56;
+  height: 65px;
+}
+
+.img_jersey {
+  width: 256px;
+  height: 256px;
+  border: 0;
+}
+
+.label {
+  color: #295a56;
+  text-align: left;
+  font: 12px arial;
+  padding-right: 20px;
+}
+
+.tables-container {
+  display: flex;
+  justify-content: space-between;
+  /* Espaciado entre los grupos de tablas */
+  align-items: flex-start;
+  /* Alinea las tablas en la parte superior */
+  gap: 20px;
+  /* Espaciado entre los contenedores */
+}
+
+.left-table {
+  flex: 1;
+  /* Ocupa espacio proporcionalmente a su contenido */
+  max-width: 25%;
+  /* Limita el ancho máximo de la tabla izquierda */
+}
+
+.center-tables {
+  flex: 1;
+  /* Ocupa más espacio para las tablas centrales */
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que las tablas se ajusten si no caben en una fila */
+  justify-content: center;
+  /* Centra las tablas dentro del contenedor */
+  gap: 10px;
+  /* Espaciado entre las tablas centrales */
+  margin-left: 130px;
+}
+
+.right-table {
+  flex: 1; /* Ocupa espacio proporcionalmente a su contenido */
+  max-width: 25%; /* Limita el ancho máximo de la tabla derecha */
+  margin-right: 270px;
+}
+
+.table {
+  border: none;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 25px;
+  width: 600px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.th {
+  color: goldenrod;
+  background-color: #363636;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.td {
+  color: #363636;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 11px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.td_img {
+  border: "0";
+  width: 15px;
+  height: 10px;
+}
+
+.td_imglogo {
+  max-height: 100px;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    flex-direction: column;
+    width: max-content;
   }
-  
-  .img_jersey {
-    width: 256px;
-    height: 256px;
-    border: 0;
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: var(--red-to-pink-to-purple-horizontal-gradient);
+    margin-block: 1.5rem;
   }
-  
-  .label {
-    color: #295a56;
-    text-align: left;
-    font: 12px arial;
-    padding-right: 20px;
-  }
-  
-  .table {
-    border: black solid;
-    border-color: grey;
-    float: left;
-    margin-right: 50px;
-    margin-bottom: 25px;
-    width: 600px;
-    font: 12px tahoma, verdana, arial;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .tr {
-    color: #295a56;
-    background: #dbe8ab;
-  }
-  
-  .td_img {
-    border: "0";
-    width: 15px;
-    height: 10px;
-  }
-  
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-  
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
+}
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+select {
+  background-color: #295a56;
+  color: white;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  width: auto;
+  min-width: 75px;
+  /* Ajusta el valor según sea necesario */
+  max-width: 100%;
+  /* Ajusta el valor según sea necesario */
+  display: block;
+  /* Asegura que el select se muestre como bloque */
+}
+
+.label {
+  color: #295a56;
+  text-align: left;
+  font: 12px arial;
+  padding-right: 20px;
+}
+
+.season-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.season-label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: goldenrod;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #363636;
+  background-repeat: repeat-x;
+  font-weight: bold;
+  width: auto;
+  min-width: 75px;
+  /* Ajusta el valor según sea necesario */
+  max-width: 100%;
+  /* Ajusta el valor según sea necesario */
+}
+
+.season-label:hover,
+.season-label:focus,
+.season-label.disabled,
+.season-label[disabled] {
+  color: #333333;
+  background-color: goldenrod;
+}
+
+.season-label:focus {
+  color: white;
+  background-color: #363636;
+  text-decoration: none;
+}
+
+.season-button {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #363636;
+  text-align: center;
+  vertical-align: middle;
+  background-color: goldenrod;
+  background-repeat: repeat-x;
+  font-weight: bold;
+  width: auto;
+  min-width: 100px;
+  /* Ajusta el valor según sea necesario */
+  max-width: 100%;
+  /* Ajusta el valor según sea necesario */
+}
+
+.season-button:hover,
+.season-button:focus,
+.season-button.disabled,
+.season-button[disabled] {
+  color: goldenrod;
+  background-color: #363636;
+}
+
+.season-button:focus {
+  color: white;
+  background-color: goldenrod;
+  text-decoration: none;
+}
+
+.img_jersey {
+  width: 50px;
+  height: 28px;
+  display: block;
+  border: 1px solid black;
+  /* Añade un borde ligero */
+  /*border-radius: 4px; /* Opcional: añade bordes redondeados */
+}
+
+.oro {
+  background-color: gold;
+  color: black;
+  /* Opcional: para asegurar que el texto sea legible */
+  text-align: center;
+}
+
+.plata {
+  background-color: silver;
+  color: black;
+  /* Opcional */
+  text-align: center;
+}
+
+.bronce {
+  background-color: #cd7f32;
+  /* Color bronce */
+  color: black;
+  /* Opcional */
+  text-align: center;
+}
+
+.chocolate {
+  text-align: center;
+}
+
+.carrera {
+  width: 260px;
+}
